@@ -7,11 +7,12 @@
     <ProjectGuid>{CD4F97AD-13A9-41CB-AF86-9E146C08DB8F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Autofac</RootNamespace>
-    <AssemblyName>Autofac</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>AutofacDemo</RootNamespace>
+    <AssemblyName>AutofacDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Autofac.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,11 +52,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\DatabaseInfo\DatabaseManager.cs" />
+    <Compile Include="Interfaces\IIdentity.cs" />
+    <Compile Include="Interfaces\IDatabase.cs" />
+    <Compile Include="Modules\UserInfo\User.cs" />
+    <Compile Include="Modules\UserInfo\UserManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Modules\DatabaseInfo\OracleDatabase.cs" />
+    <Compile Include="Modules\DatabaseInfo\SqlDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libraries\Autofac.Configuration.dll" />
+    <Content Include="Libraries\Autofac.Configuration.pdb" />
+    <Content Include="Libraries\Autofac.Configuration.xml" />
+    <Content Include="Libraries\Autofac.dll" />
+    <Content Include="Libraries\Autofac.pdb" />
+    <Content Include="Libraries\Autofac.xml" />
+    <Content Include="Libraries\License.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
