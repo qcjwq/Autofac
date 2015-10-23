@@ -2,7 +2,6 @@
 using Autofac;
 using Autofac.Configuration;
 using AutofacDemo.Interfaces;
-using AutofacDemo.Modules;
 using AutofacDemo.Modules.DatabaseInfo;
 
 namespace AutofacDemo
@@ -21,13 +20,6 @@ namespace AutofacDemo
             }
 
             Console.ReadKey();
-        }
-
-        private static IIdentity GetIdentity()
-        {
-            var builder = new ContainerBuilder();
-            builder.RegisterModule(new ConfigurationSettingsReader(""));
-            //builder.Register(c=>new )
         }
     }
 }
